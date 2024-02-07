@@ -1,0 +1,18 @@
+FROM python:3.7
+
+
+WORKDIR /backend
+
+RUN pip3 install Flask
+RUN pip3 install flask-cors
+RUN pip3 install numpy
+RUN pip3 install scikit-learn
+# RUN pip3 install --default-timeout=100 torch==1.13.1
+RUN pip3 install torch==1.13.1+cpu -f https://download.pytorch.org/whl/cpu/torch_stable.html
+RUN pip3 install torchtext
+RUN pip3 install nltk
+
+
+COPY ./backend /backend/
+
+CMD tail -f /dev/null
